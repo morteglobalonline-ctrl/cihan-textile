@@ -34,6 +34,11 @@ jobs:
       - name: Work out the Pages base path
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          # Switches Pages on and points it at Actions if it is not set up yet.
+          # Without this the first run fails with "Get Pages site failed", since
+          # the action only reads the config and will not create it.
+          enablement: true
 
       - run: npm ci
 
