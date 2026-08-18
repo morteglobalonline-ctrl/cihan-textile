@@ -1,23 +1,8 @@
 import { Suspense } from "react";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { isLocale, t } from "@/lib/i18n";
+import { t, type Locale } from "@/lib/i18n";
 import FabricTable from "@/components/FabricTable";
 
-export async function generateMetadata({
-  params,
-}: PageProps<"/[locale]/catalog">): Promise<Metadata> {
-  const { locale } = await params;
-  if (!isLocale(locale)) return {};
-  const d = t(locale);
-  return { title: d.catalog.heading, description: d.catalog.lead };
-}
-
-export default async function CatalogPage({
-  params,
-}: PageProps<"/[locale]/catalog">) {
-  const { locale } = await params;
-  if (!isLocale(locale)) notFound();
+export default function Catalog({ locale }: { locale: Locale }) {
   const d = t(locale);
 
   return (

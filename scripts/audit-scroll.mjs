@@ -20,7 +20,7 @@ const BASE = "http://localhost:4321";
 const OUT = "/private/tmp/claude-501/-Users-omerozgorus/0f52a4ac-074e-49c5-a050-e1f3c1dd4254/scratchpad/shots";
 mkdirSync(OUT, { recursive: true });
 
-const path = process.argv[2] || "/tr";
+const path = process.argv[2] || "/";
 const label = process.argv[3] || "scroll";
 const reduced = process.argv.includes("--reduced");
 

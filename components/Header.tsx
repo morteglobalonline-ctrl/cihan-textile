@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { COMPANY, LOCALES, t, type Locale } from "@/lib/i18n";
+import { route, swapLocale } from "@/lib/routes";
 import { asset } from "@/lib/asset";
 
 export default function Header({ locale }: { locale: Locale }) {
@@ -29,16 +30,14 @@ export default function Header({ locale }: { locale: Locale }) {
   }, [open]);
 
   const links = [
-    { href: `/${locale}/catalog`, label: d.nav.catalog },
-    { href: `/${locale}/about`, label: d.nav.about },
-    { href: `/${locale}/contact`, label: d.nav.contact },
+    { href: route(locale, "catalog"), label: d.nav.catalog },
+    { href: route(locale, "about"), label: d.nav.about },
+    { href: route(locale, "contact"), label: d.nav.contact },
   ];
 
-  /** Same page, other language. */
-  const swapLocale = (next: Locale) => {
-    const rest = pathname.replace(/^\/(tr|en)/, "");
-    return `/${next}${rest}`;
-  };
+  /** Same page, other language — resolved through the route map, since the
+      two languages no longer share a path shape. */
+  const otherLocale = (next: Locale) => swapLocale(pathname, next);
 
   return (
     <header
@@ -49,7 +48,7 @@ export default function Header({ locale }: { locale: Locale }) {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[110rem] items-center justify-between gap-6 px-5 sm:h-20 sm:px-8">
-        <Link href={`/${locale}`} aria-label={COMPANY.name} className="shrink-0">
+        <Link href={route(locale, "home")} aria-label={COMPANY.name} className="shrink-0">
           <Image
             src={asset("/logo.png")}
             alt={COMPANY.legalTr}
@@ -65,7 +64,7 @@ export default function Header({ locale }: { locale: Locale }) {
           aria-label={locale === "tr" ? "Ana menü" : "Main"}
         >
           {links.map((link) => {
-            const active = pathname === link.href;
+            const active = pathname.replace(/\/+$/, "") === link.href.replace(/\/+$/, "");
             return (
               <Link
                 key={link.href}
@@ -93,7 +92,7 @@ export default function Header({ locale }: { locale: Locale }) {
               <span key={code} className="flex items-center gap-1">
                 {i > 0 && <span className="text-loom">/</span>}
                 <Link
-                  href={swapLocale(code)}
+                  href={otherLocale(code)}
                   hrefLang={code}
                   aria-current={code === locale ? "true" : undefined}
                   className={

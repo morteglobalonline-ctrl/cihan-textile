@@ -82,11 +82,17 @@ own whiteness is the brand.
 ## Layout
 
 ```
-app/[locale]/            layout (html lang, fonts, header/footer) + 4 pages
-  page.tsx               home
-  catalog/               the searchable spec table
-  about/  contact/
+app/(tr)/                Turkish, at the root — the company trades in Türkiye
+  layout.tsx             root layout, lang="tr"
+  page.tsx               /
+  kumaslar/ kurumsal/ iletisim/
+app/(en)/                English, under /en, its own root layout, lang="en"
+  en/ en/catalog/ en/about/ en/contact/
+lib/routes.ts            every URL in one map — build links with route()
 components/
+  SiteShell.tsx          <html> down: fonts, skip link, header, footer
+  pages/                 page bodies, shared by both languages
+
   home/                  Hero + Bolt, NameMarquee, Intro, Compare, Families,
                          Drape, Warehouse, Value, Process, CallToAction
   FabricTable.tsx        catalogue: search / family / fibre / PFD / sort
@@ -94,7 +100,7 @@ components/
 lib/
   fabrics.ts             65 qualities, structured and typed
   i18n.ts                TR + EN copy behind one `Dict` type
-proxy.ts                 Accept-Language → /tr or /en
+lib/metadata.ts          titles, descriptions and hreflang per page
 scripts/                 Playwright audits (see below)
 public/fabrics/          13 photographs
 public/video/            intro.mp4 (the scrubbed aisle, 4.1 MB, all-keyframe)

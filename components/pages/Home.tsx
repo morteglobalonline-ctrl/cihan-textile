@@ -1,5 +1,4 @@
-import { notFound } from "next/navigation";
-import { isLocale } from "@/lib/i18n";
+import { type Locale } from "@/lib/i18n";
 import Corridor from "@/components/home/Corridor";
 import Hero from "@/components/home/Hero";
 import NameMarquee from "@/components/home/NameMarquee";
@@ -12,9 +11,7 @@ import Value from "@/components/home/Value";
 import Process from "@/components/home/Process";
 import CallToAction from "@/components/home/CallToAction";
 
-export default async function HomePage({ params }: PageProps<"/[locale]">) {
-  const { locale } = await params;
-  if (!isLocale(locale)) notFound();
+export default function Home({ locale }: { locale: Locale }) {
 
   return (
     <>

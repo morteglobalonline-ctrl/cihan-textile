@@ -1,24 +1,9 @@
-import type { Metadata } from "next";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { isLocale, t, COMPANY } from "@/lib/i18n";
+import { t, COMPANY, type Locale } from "@/lib/i18n";
 import { asset } from "@/lib/asset";
 import Reveal from "@/components/Reveal";
 
-export async function generateMetadata({
-  params,
-}: PageProps<"/[locale]/about">): Promise<Metadata> {
-  const { locale } = await params;
-  if (!isLocale(locale)) return {};
-  const d = t(locale);
-  return { title: d.about.heading, description: d.about.lead };
-}
-
-export default async function AboutPage({
-  params,
-}: PageProps<"/[locale]/about">) {
-  const { locale } = await params;
-  if (!isLocale(locale)) notFound();
+export default function About({ locale }: { locale: Locale }) {
   const d = t(locale);
 
   return (

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { COMPANY, t, type Locale } from "@/lib/i18n";
+import { route } from "@/lib/routes";
 import { FAMILIES } from "@/lib/fabrics";
 import { asset } from "@/lib/asset";
 
@@ -33,7 +34,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               {FAMILIES.map((family) => (
                 <li key={family.id}>
                   <Link
-                    href={`/${locale}/catalog?family=${family.id}`}
+                    href={`${route(locale, "catalog")}?family=${family.id}`}
                     className="text-sm text-ink-soft transition-colors hover:text-ink"
                   >
                     {locale === "tr" ? family.tr : family.en}
@@ -50,7 +51,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <ul className="mt-5 space-y-2.5">
               <li>
                 <Link
-                  href={`/${locale}/about`}
+                  href={route(locale, "about")}
                   className="text-sm text-ink-soft transition-colors hover:text-ink"
                 >
                   {d.nav.about}
@@ -58,7 +59,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/catalog`}
+                  href={route(locale, "catalog")}
                   className="text-sm text-ink-soft transition-colors hover:text-ink"
                 >
                   {d.nav.catalog}
@@ -66,7 +67,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               </li>
               <li>
                 <Link
-                  href={`/${locale}/contact`}
+                  href={route(locale, "contact")}
                   className="text-sm text-ink-soft transition-colors hover:text-ink"
                 >
                   {d.nav.contact}

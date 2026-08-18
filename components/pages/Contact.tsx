@@ -1,22 +1,7 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { isLocale, t, COMPANY } from "@/lib/i18n";
+import { t, COMPANY, type Locale } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
 
-export async function generateMetadata({
-  params,
-}: PageProps<"/[locale]/contact">): Promise<Metadata> {
-  const { locale } = await params;
-  if (!isLocale(locale)) return {};
-  const d = t(locale);
-  return { title: d.contact.heading, description: d.contact.lead };
-}
-
-export default async function ContactPage({
-  params,
-}: PageProps<"/[locale]/contact">) {
-  const { locale } = await params;
-  if (!isLocale(locale)) notFound();
+export default function Contact({ locale }: { locale: Locale }) {
   const d = t(locale);
 
   const wa = `https://wa.me/${COMPANY.whatsappHref}?text=${encodeURIComponent(

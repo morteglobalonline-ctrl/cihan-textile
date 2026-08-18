@@ -16,7 +16,7 @@ const page = await ctx.newPage();
 
 // Sample the roll's transform and the cloth's clip while the intro plays, so we
 // can prove the two stay locked together rather than eyeballing it.
-await page.goto(`${BASE}/tr`);
+await page.goto(`${BASE}/`);
 // Fast dismiss: no settle wait, because the roll's drop is only 0.42s long and
 // the shared helper's pause swallowed it before sampling began.
 await page.keyboard.press("Escape");

@@ -27,7 +27,7 @@ const VIEWPORTS = [
   { name: "1440", width: 1440, height: 900 },
 ];
 
-const PAGES = ["/tr", "/tr/catalog", "/tr/about", "/tr/contact", "/en"];
+const PAGES = ["/", "/kumaslar", "/kurumsal", "/iletisim", "/en", "/en/catalog"];
 
 /** Elements whose box sticks out past the document's client width. */
 const findOverflow = () => {

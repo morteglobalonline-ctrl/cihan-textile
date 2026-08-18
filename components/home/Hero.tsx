@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { t, type Locale } from "@/lib/i18n";
+import { route } from "@/lib/routes";
 import { asset } from "@/lib/asset";
 import Bolt from "@/components/home/Bolt";
 
@@ -192,7 +193,7 @@ export default function Hero({ locale }: { locale: Locale }) {
 
           <div data-hero className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              href={`/${locale}/catalog`}
+              href={route(locale, "catalog")}
               className="group inline-flex items-center gap-3 bg-ink px-7 py-4 font-mono text-[0.7rem] tracking-widest text-paper uppercase transition-colors duration-300 hover:bg-brand"
             >
               {d.hero.ctaCatalog}
@@ -204,7 +205,7 @@ export default function Hero({ locale }: { locale: Locale }) {
               </span>
             </Link>
             <Link
-              href={`/${locale}/contact`}
+              href={route(locale, "contact")}
               className="inline-flex items-center gap-3 border border-ink px-7 py-4 font-mono text-[0.7rem] tracking-widest uppercase transition-colors duration-300 hover:bg-ink hover:text-paper"
             >
               {d.hero.ctaSample}

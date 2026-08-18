@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { t, type Locale } from "@/lib/i18n";
+import { route } from "@/lib/routes";
 import { FABRICS, FAMILIES } from "@/lib/fabrics";
 import Reveal from "@/components/Reveal";
 
@@ -53,7 +54,7 @@ export default function Families({ locale }: { locale: Locale }) {
             return (
               <li key={family.id} data-reveal className="border-b border-greige">
                 <Link
-                  href={`/${locale}/catalog?family=${family.id}`}
+                  href={`${route(locale, "catalog")}?family=${family.id}`}
                   className="group grid gap-4 py-7 transition-colors duration-400 hover:bg-ecru lg:grid-cols-[3.5rem_minmax(0,1fr)_minmax(0,1.6fr)_11rem] lg:items-baseline lg:gap-8 lg:px-4"
                 >
                   <span className="tabular font-mono text-[0.68rem] text-loom">
@@ -101,7 +102,7 @@ export default function Families({ locale }: { locale: Locale }) {
 
         <div className="mt-12">
           <Link
-            href={`/${locale}/catalog`}
+            href={route(locale, "catalog")}
             className="group inline-flex items-center gap-3 border border-ink px-7 py-4 font-mono text-[0.7rem] tracking-widest uppercase transition-colors duration-300 hover:bg-ink hover:text-paper"
           >
             {d.families.cta}

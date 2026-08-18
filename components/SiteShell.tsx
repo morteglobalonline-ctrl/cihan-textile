@@ -1,8 +1,5 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { Instrument_Serif, Inter, Geist_Mono } from "next/font/google";
-import "../globals.css";
-import { LOCALES, isLocale, t, COMPANY } from "@/lib/i18n";
+import { type Locale } from "@/lib/i18n";
 import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -30,59 +27,37 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
-}
-
-export async function generateMetadata({
-  params,
-}: LayoutProps<"/[locale]">): Promise<Metadata> {
-  const { locale } = await params;
-  if (!isLocale(locale)) return {};
-  const d = t(locale);
-
-  return {
-    metadataBase: new URL("https://www.cihantextile.com"),
-    title: { default: d.meta.title, template: `%s — ${COMPANY.name}` },
-    description: d.meta.description,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: { tr: "/tr", en: "/en", "x-default": "/tr" },
-    },
-    openGraph: {
-      type: "website",
-      siteName: COMPANY.name,
-      title: d.meta.title,
-      description: d.meta.description,
-      locale: locale === "tr" ? "tr_TR" : "en_US",
-      images: [{ url: "/fabrics/white-satin-swirl.jpg", width: 1600, height: 1066 }],
-    },
-  };
-}
-
-export default async function LocaleLayout({
+/**
+ * The document itself — everything from <html> down.
+ *
+ * Turkish and English are separate root layouts (app/(tr) and app/(en)), so
+ * each can carry its own `lang`. Both render this, which keeps the fonts,
+ * the skip link and the chrome in one place instead of two.
+ */
+export default function SiteShell({
+  locale,
   children,
-  params,
-}: LayoutProps<"/[locale]">) {
-  const { locale } = await params;
-  if (!isLocale(locale)) notFound();
-
+}: {
+  locale: Locale;
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang={locale}
       className={`${instrumentSerif.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
+      <body className="min-h-full bg-paper text-ink">
         {/* Marks that JS is available, so [data-reveal] elements may start
-            hidden. Without JS they stay visible and the page still reads. */}
+            hidden. Without JS they stay visible and the page still reads.
+            First thing in the body, so it runs before any revealed element is
+            parsed — the App Router owns <head>, and putting it there trips the
+            no-head-element rule. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `document.documentElement.classList.add('js')`,
           }}
         />
-      </head>
-      <body className="min-h-full bg-paper text-ink">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"

@@ -40,7 +40,7 @@ const check = (label, pass, detail = "") =>
   console.log(`${pass ? "✓" : "✗"} ${label}${detail ? `  — ${detail}` : ""}`);
 
 // ── Catalogue deep link ────────────────────────────────────────────
-await page.goto(`${BASE}/tr/catalog?family=satin`, { waitUntil: "networkidle" });
+await page.goto(`${BASE}/kumaslar?family=satin`, { waitUntil: "networkidle" });
 await page.waitForTimeout(700);
 
 const familyValue = await page.locator("#fabric-family").inputValue();
@@ -50,7 +50,7 @@ const satinRows = await page.locator("table tbody tr").count();
 check("satin family filters rows", satinRows === 19, `${satinRows} rows (expect 19)`);
 
 // ── Search ─────────────────────────────────────────────────────────
-await page.goto(`${BASE}/tr/catalog`, { waitUntil: "networkidle" });
+await page.goto(`${BASE}/kumaslar`, { waitUntil: "networkidle" });
 const allRows = await page.locator("table tbody tr").count();
 check("full catalogue renders", allRows === 65, `${allRows} rows (expect 65)`);
 
@@ -91,7 +91,7 @@ const emptyVisible = await page.getByText(/eşleşen kalite yok/i).isVisible();
 check("empty state shows", emptyVisible);
 
 // ── Compare slider, keyboard ───────────────────────────────────────
-await page.goto(`${BASE}/tr`, { waitUntil: "networkidle" });
+await page.goto(`${BASE}/`, { waitUntil: "networkidle" });
   await dismissIntro(page);
 const slider = page.locator('input[type="range"]');
 await slider.focus();
@@ -102,7 +102,7 @@ const after = await slider.inputValue();
 check("compare slider is keyboard operable", Number(after) > Number(before), `${before} → ${after}`);
 
 // ── Language switch keeps the page ─────────────────────────────────
-await page.goto(`${BASE}/tr/catalog`, { waitUntil: "networkidle" });
+await page.goto(`${BASE}/kumaslar`, { waitUntil: "networkidle" });
 await page.getByRole("link", { name: "en", exact: true }).click();
 await page.waitForURL(/\/en\/catalog/);
 // The static build has trailingSlash on, so accept either spelling.
@@ -114,8 +114,8 @@ check(
 
 // ── Screenshots of remaining pages ─────────────────────────────────
 for (const [path, name] of [
-  ["/tr/about", "about-tr"],
-  ["/tr/contact", "contact-tr"],
+  ["/kurumsal", "about-tr"],
+  ["/iletisim", "contact-tr"],
 ]) {
   await page.goto(BASE + path, { waitUntil: "networkidle" });
   await page.waitForTimeout(1500);

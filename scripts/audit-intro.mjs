@@ -20,7 +20,7 @@ const openPage = async (opts = {}) => {
   });
   const page = await ctx.newPage();
   page.on("pageerror", (e) => console.log("  pageerror:", e.message));
-  await page.goto(`${BASE}/tr`, { waitUntil: "networkidle" });
+  await page.goto(`${BASE}/`, { waitUntil: "networkidle" });
   await page.waitForTimeout(1300);
   return { ctx, page };
 };
