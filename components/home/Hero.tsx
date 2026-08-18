@@ -249,7 +249,7 @@ export default function Hero({ locale }: { locale: Locale }) {
           <div className="absolute -top-1 -right-1 hidden items-start gap-3 lg:flex">
             <div data-rule aria-hidden className="h-24 w-px bg-loom" />
             <p className="tabular font-mono text-[0.65rem] leading-relaxed tracking-[0.18em] text-ink-soft uppercase">
-              148–150
+              148–185
               <br />
               cm
             </p>

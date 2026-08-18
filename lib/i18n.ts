@@ -154,7 +154,7 @@ const tr: Dict = {
   },
   stats: [
     { value: "1998", label: "Aile şirketiyiz" },
-    { value: "148–150", label: "cm standart en" },
+    { value: "148–185", label: "cm standart en" },
     { value: "Depodan", label: "stoklu sevkiyat" },
     { value: "Proforma", label: "bazlı ithalat" },
   ],
@@ -162,7 +162,7 @@ const tr: Dict = {
     heading:
       "Ham kumaş ve PFD ithal eder, Türkiye içinde toptan dağıtırız.",
     body: [
-      "Ürünümüz bir gömlek ya da elbise değil; onların yapılacağı top kumaştır — 148–150 cm eninde, boyaya ve baskıya hazır.",
+      "Ürünümüz bir gömlek ya da elbise değil; onların yapılacağı top kumaştır — 148–185 cm eninde, boyaya ve baskıya hazır.",
       "Müşterimiz baskıcı, boyacı, apreci ve ihracat yapan konfeksiyoncudur. Onların bizden beklediği tek şey vardır: doğru gramaj, doğru en, sözü verilen günde.",
     ],
   },
@@ -269,10 +269,10 @@ const tr: Dict = {
   about: {
     eyebrow: "Kurumsal",
     heading: "Kumaş ticaretinde bir aile şirketi",
-    lead: "Kurulduğumuz günden bugüne yaptığımız iş aynı: ülkemizde üretilmeyen ham kumaşları ithal etmek ve yurt içinde toptan satmak.",
+    lead: "Kurulduğumuz günden bugüne yaptığımız iş aynı: piyasada talep gören ham kumaşları ithal etmek ve yurt içinde toptan satmak.",
     body: [
       "Cihan Tekstil bir aile şirketidir. Ticaretin temelleri dedemiz Şeyhmus Özgörüş'ün manifatura dükkanında atıldı. O günden bu yana yaptığımız iş değişmedi: biz kumaş satarız. İmalata hiç girmedik.",
-      "1998'de ikinci kuşağın eğitimi, vizyonu ve ticari görüşüyle Cihan Tekstil kuruldu. Amaç baştan netti: ülkemizde üretilmeyen ham kumaşların ithalatını ve yurt içinde toptan satışını yapmak.",
+      "1998'de ikinci kuşağın eğitimi, vizyonu ve ticari görüşüyle Cihan Tekstil kuruldu. Amaç baştan netti: piyasanın talep ettiği ham kumaşları ithal etmek ve yurt içinde toptan satmak.",
       "Ürünlerimiz ham kumaş ve baskıya hazır kumaş olmak üzere ağırlıklı olarak polyester, pamuk ve viskon çeşitlerinden oluşur. Kalite, fiyat ve termin sıkıntısı yaşamadığımız ürünleri depodan stoklu ve proforma bazında satıyoruz.",
       "Kuruluşumuzdan bugüne müşteri memnuniyeti vazgeçilmezlerimiz arasında oldu. İhracat odaklı çalışan müşterilerimizin yurt dışı pazarında sorunsuz hizmet verebilmesi için kalite yönetim sistemimizi sürekli güncelliyoruz.",
     ],
@@ -285,7 +285,7 @@ const tr: Dict = {
       {
         year: "1998",
         title: "İkinci kuşak",
-        body: "Cihan Tekstil kurulur; ülkemizde üretilmeyen ham kumaşların ithalatı ve yurt içi toptan satışı için.",
+        body: "Cihan Tekstil kurulur; piyasada talep gören ham kumaşların ithalatı ve yurt içi toptan satışı için.",
       },
       {
         year: "Bugün",
@@ -348,7 +348,7 @@ const en: Dict = {
   },
   stats: [
     { value: "1998", label: "A family company" },
-    { value: "148–150", label: "cm standard width" },
+    { value: "148–185", label: "cm standard width" },
     { value: "Ex-stock", label: "warehouse dispatch" },
     { value: "Proforma", label: "based import" },
   ],
@@ -356,7 +356,7 @@ const en: Dict = {
     heading:
       "We import greige and PFD fabric and distribute it wholesale across Türkiye.",
     body: [
-      "Our product is not a shirt or a dress — it is the roll they are made from: 148–150 cm wide, ready to take dye and print.",
+      "Our product is not a shirt or a dress — it is the roll they are made from: 148–185 cm wide, ready to take dye and print.",
       "Our customers are printers, dyers, finishers and garment exporters. They ask us for one thing: the right weight, at the right width, on the day we promised.",
     ],
   },
@@ -463,10 +463,10 @@ const en: Dict = {
   about: {
     eyebrow: "Company",
     heading: "A family company in the fabric trade",
-    lead: "What we do has not changed since the day we were founded: import the greige fabric Türkiye does not produce, and sell it wholesale on the domestic market.",
+    lead: "What we do has not changed since the day we were founded: import the greige fabric the market is asking for, and sell it wholesale on the domestic market.",
     body: [
       "Cihan Tekstil is a family company. The trade began in our grandfather Şeyhmus Özgörüş's draper's shop, and what we do has not changed since: we sell cloth. We have never been manufacturers.",
-      "In 1998, with the education, vision and commercial judgement of the second generation, Cihan Tekstil was founded — to import the greige fabric Türkiye does not produce and to sell it wholesale on the domestic market.",
+      "In 1998, with the education, vision and commercial judgement of the second generation, Cihan Tekstil was founded — to import the greige fabric the market is asking for and to sell it wholesale on the domestic market.",
       "Our range is greige and print-ready fabric, predominantly in polyester, cotton and viscose. We sell ex-stock and on a proforma basis the qualities where we have no trouble with quality, price or delivery.",
       "Customer satisfaction has been non-negotiable since the day we opened. For customers working towards export, we keep our quality management system continuously up to date so their service abroad is never interrupted.",
     ],
@@ -479,7 +479,7 @@ const en: Dict = {
       {
         year: "1998",
         title: "Second generation",
-        body: "Cihan Tekstil is founded, to import the greige fabric Türkiye does not produce and sell it wholesale.",
+        body: "Cihan Tekstil is founded, to import the greige fabric the market is asking for and sell it wholesale.",
       },
       {
         year: "Today",
