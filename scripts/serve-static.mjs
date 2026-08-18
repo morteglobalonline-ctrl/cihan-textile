@@ -30,9 +30,13 @@ const resolve = (urlPath) => {
     return existsSync(idx) ? idx : null;
   }
   if (existsSync(p)) return p;
-  // mirrors a host that serves /tr as /tr/index.html
+  // Mirrors what a real host does with an extensionless URL: try /tr/index.html
+  // (directory build) and then /tr.html (flat build). Apache does the first via
+  // DirectoryIndex and the second via MultiViews or the .htaccess rewrite.
   const asDir = join(p, "index.html");
-  return existsSync(asDir) ? asDir : null;
+  if (existsSync(asDir)) return asDir;
+  const asFile = `${p}.html`;
+  return existsSync(asFile) ? asFile : null;
 };
 
 createServer((req, res) => {

@@ -98,7 +98,49 @@ alıyor ve custom domain bağlandığında kendiliğinden boşalıyor.
 
 ---
 
-## C. GitHub kullanmadan (hosting'e FTP)
+## C. Hosting'e FTP ile (GitHub kullanmadan)
+
+```bash
+npm run build:static
+cd out && zip -r ../cihan-tekstil-site.zip .
+```
+
+Paketi hosting firmasına verin. İçinde `OKUBENI.txt` var; ne yükleyeceklerini,
+sunucudan ne beklendiğini ve sorun çıkarsa nereye bakacaklarını anlatıyor.
+
+### "Dosyaları .html uzantılı yapın" isteği
+
+Dosyalar **zaten** .html — sadece `tr/index.html` biçiminde, klasör içinde.
+Sunucuda hiçbir şey kurulu olması gerekmiyor; PHP, Node, GitHub, hiçbiri.
+
+Düz `tr.html` / `tr/about.html` yapısı denendi ve **çalışmıyor**, sebebi yapısal:
+
+- `/tr` aynı anda hem bir sayfa hem de bir klasör olmak zorunda (altında
+  `catalog`, `about`, `contact` var).
+- Apache böyle bir istekte `mod_dir` ile klasöre yönlendirir ve `tr.html`
+  dosyasına hiç bakmaz. `.htaccess` kuralı da kurtaramaz: alışılmış
+  `RewriteCond !-d` koşulu tam olarak bu durumu dışarıda bırakır.
+- Linkleri `/tr/about.html` biçimine çevirip denedik — tıklayarak gezinme
+  çalışıyor ama Next istemci yönlendiricisi adresi `/tr/about` olarak yazıyor.
+  Ziyaretçi **sayfayı yenilediğinde, linki paylaştığında ya da Google o adresi
+  taradığında 404** alıyor. Ölçüldü: `/tr`, `/tr/about`, `/tr/catalog`,
+  `/tr/contact` hepsi 404.
+
+Klasör yapısı bu sorunların hiçbirini yaşamıyor ve ek sunucu ayarı istemiyor.
+Bu yüzden düz mod build script'inden kaldırıldı.
+
+### Teslim öncesi doğrulama
+
+Paketi gerçekten açıp, akıllı yönlendirme yapmayan düz bir dosya sunucusunda
+denemek en güvenilir kontrol:
+
+```bash
+unzip -q cihan-tekstil-site.zip -d /tmp/site-test
+node scripts/serve-static.mjs 4321 /tmp/site-test
+node scripts/audit-intro.mjs && node scripts/audit-responsive.mjs
+```
+
+## D. Eski notlar
 
 ```bash
 npm run build:static

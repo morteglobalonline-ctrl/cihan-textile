@@ -27,7 +27,9 @@ const nextConfig: NextConfig = {
   ...(isExport
     ? {
         output: "export",
-        // Pages serves directories, so /tr/ must resolve to /tr/index.html.
+        // Directory URLs: /tr/ resolves to /tr/index.html on every web server
+        // without configuration. A flat tr.html / tr/about.html layout was
+        // tried and abandoned — see DEPLOY.md for why it cannot work here.
         trailingSlash: true,
         // There is no optimizer on Pages; the originals are served as-is.
         images: { unoptimized: true },
