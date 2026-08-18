@@ -132,7 +132,7 @@ const tr: Dict = {
   meta: {
     title: "Cihan Textile — Ham Kumaş ve PFD Tedariki",
     description:
-      "Bursa'dan ham kumaş ve baskıya hazır kumaş tedariki. Şifon, krep, saten, poplin, viskon ve mikro grupları; depodan stoklu ve proforma bazlı satış.",
+      "Bursa'dan ham kumaş ve PFD tedariki. Şifon, krep, saten, poplin, viskon ve mikro grupları; depodan stoklu ve proforma bazlı satış.",
   },
   nav: {
     home: "Ana Sayfa",
@@ -144,7 +144,7 @@ const tr: Dict = {
     langLabel: "Dil seçimi",
   },
   hero: {
-    eyebrow: "Ham kumaş ve baskıya hazır kumaş · Bursa",
+    eyebrow: "Ham kumaş ve PFD · Bursa",
     line1: "Her baskının",
     line2: "başladığı yer",
     lead: "Boyanmamış, basılmamış, işlenmemiş. Biz zinciri en baştan besliyoruz: baskıcının, boyacının ve konfeksiyoncunun üzerine çalışacağı beyaz zemini. Çok satan kaliteler depomuzda hazır bekliyor.",
@@ -273,7 +273,7 @@ const tr: Dict = {
     body: [
       "Cihan Tekstil bir aile şirketidir. Ticaretin temelleri dedemiz Şeyhmus Özgörüş'ün manifatura dükkanında atıldı. O günden bu yana yaptığımız iş değişmedi: biz kumaş satarız. İmalata hiç girmedik.",
       "1998'de ikinci kuşağın eğitimi, vizyonu ve ticari görüşüyle Cihan Tekstil kuruldu. Amaç baştan netti: piyasanın talep ettiği ham kumaşları ithal etmek ve yurt içinde toptan satmak.",
-      "Ürünlerimiz ham kumaş ve baskıya hazır kumaş olmak üzere ağırlıklı olarak polyester, pamuk ve viskon çeşitlerinden oluşur. Kalite, fiyat ve termin sıkıntısı yaşamadığımız ürünleri depodan stoklu ve proforma bazında satıyoruz.",
+      "Ürünlerimiz ham kumaş ve PFD olmak üzere ağırlıklı olarak polyester, pamuk ve viskon çeşitlerinden oluşur. Kalite, fiyat ve termin sıkıntısı yaşamadığımız ürünleri depodan stoklu ve proforma bazında satıyoruz.",
       "Kuruluşumuzdan bugüne müşteri memnuniyeti vazgeçilmezlerimiz arasında oldu. İhracat odaklı çalışan müşterilerimizin yurt dışı pazarında sorunsuz hizmet verebilmesi için kalite yönetim sistemimizi sürekli güncelliyoruz.",
     ],
     timeline: [
@@ -290,7 +290,7 @@ const tr: Dict = {
       {
         year: "Bugün",
         title: "Buttim, Bursa",
-        body: "Merkezimizden Türkiye geneline ham kumaş ve baskıya hazır kumaş tedarik ediyoruz.",
+        body: "Merkezimizden Türkiye geneline ham kumaş ve PFD tedarik ediyoruz.",
       },
     ],
   },
@@ -315,7 +315,7 @@ const tr: Dict = {
     secondary: "E-posta gönderin",
   },
   footer: {
-    tagline: "Ham kumaş ve baskıya hazır kumaş tedariki — Bursa.",
+    tagline: "Ham kumaş ve PFD tedariki — Bursa.",
     rights: "Tüm hakları saklıdır.",
     products: "Ürünler",
     company: "Şirket",
@@ -326,7 +326,7 @@ const en: Dict = {
   meta: {
     title: "Cihan Textile — Greige & PFD Fabric Supply",
     description:
-      "Greige and print-ready fabric supplied from Bursa. Chiffon, crepe, satin, poplin, viscose and micro groups; ex-stock and proforma-based sales.",
+      "Greige and PFD fabric supplied from Bursa. Chiffon, crepe, satin, poplin, viscose and micro groups; ex-stock and proforma-based sales.",
   },
   nav: {
     home: "Home",
@@ -338,7 +338,7 @@ const en: Dict = {
     langLabel: "Language",
   },
   hero: {
-    eyebrow: "Greige & print-ready fabric · Bursa",
+    eyebrow: "Greige & PFD · Bursa",
     line1: "Where every",
     line2: "print begins",
     lead: "Undyed, unprinted, unfinished. We supply the very start of the chain — the white ground a printer, dyer or garment maker builds on. Our fastest-moving qualities are waiting in the warehouse.",
@@ -467,7 +467,7 @@ const en: Dict = {
     body: [
       "Cihan Tekstil is a family company. The trade began in our grandfather Şeyhmus Özgörüş's draper's shop, and what we do has not changed since: we sell cloth. We have never been manufacturers.",
       "In 1998, with the education, vision and commercial judgement of the second generation, Cihan Tekstil was founded — to import the greige fabric the market is asking for and to sell it wholesale on the domestic market.",
-      "Our range is greige and print-ready fabric, predominantly in polyester, cotton and viscose. We sell ex-stock and on a proforma basis the qualities where we have no trouble with quality, price or delivery.",
+      "Our range is greige and PFD fabric, predominantly in polyester, cotton and viscose. We sell ex-stock and on a proforma basis the qualities where we have no trouble with quality, price or delivery.",
       "Customer satisfaction has been non-negotiable since the day we opened. For customers working towards export, we keep our quality management system continuously up to date so their service abroad is never interrupted.",
     ],
     timeline: [
@@ -484,7 +484,7 @@ const en: Dict = {
       {
         year: "Today",
         title: "Buttim, Bursa",
-        body: "From our base we supply greige and print-ready fabric across Türkiye.",
+        body: "From our base we supply greige and PFD fabric across Türkiye.",
       },
     ],
   },
@@ -509,7 +509,7 @@ const en: Dict = {
     secondary: "Send an email",
   },
   footer: {
-    tagline: "Greige and print-ready fabric supply — from Bursa.",
+    tagline: "Greige and PFD fabric supply — from Bursa.",
     rights: "All rights reserved.",
     products: "Products",
     company: "Company",

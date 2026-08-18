@@ -1,7 +1,7 @@
 # Cihan Textile
 
 Bilingual (TR/EN) marketing site for **Cihan Tekstil** — a family firm in Bursa
-importing greige and print-ready fabric and selling it wholesale in Türkiye.
+importing greige and PFD fabric and selling it wholesale in Türkiye.
 
 ## The idea
 
@@ -199,10 +199,12 @@ Two things must stay out of the copy, at the company's instruction:
   workshop", which reversed the meaning and implied they were manufacturers.
   They have always been traders. The company's own founding date is 1998.
 
-One open question: the corporate page says **PFP** (prepared for printing) while
-the product list PDF labels qualities **PFD** (prepared for dyeing). The
-catalogue keeps the PDF's label; prose uses "baskıya hazır kumaş". Worth settling
-on one.
+**PFD, not PFP.** The corporate page on the old site said PFP; the product list
+PDF labels qualities PFD, and the company has settled on **PFD** throughout. Use
+it wherever the product category is named, in both languages. Sentences that
+merely describe the state of the cloth ("boyaya ve baskıya hazır", "a print-ready
+ground") are left as they are — they explain what PFD means rather than renaming
+it.
 
 ## Accessibility notes
 
